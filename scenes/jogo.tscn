@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bs2212snsc6bk"]
+
+[ext_resource type="PackedScene" uid="uid://cbhbbnjubcsvr" path="res://scenes/jogador.tscn" id="1_sq8yp"]
+[ext_resource type="Texture2D" uid="uid://cfcn758skep3x" path="res://assets/piso.png" id="2_1b3iq"]
+
+[node name="Jogo" type="Node2D" unique_id=1766972351]
+position = Vector2(-1, 0)
+
+[node name="Jogador" parent="." unique_id=1785126843 instance=ExtResource("1_sq8yp")]
+position = Vector2(587, 330)
+
+[node name="Piso" type="Sprite2D" parent="." unique_id=1567161074]
+position = Vector2(640, 360)
+texture = ExtResource("2_1b3iq")
