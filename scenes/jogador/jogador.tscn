@@ -1,19 +1,26 @@
 [gd_scene format=3 uid="uid://cbhbbnjubcsvr"]
 
 [ext_resource type="Texture2D" uid="uid://c7qhvbujodhhj" path="res://assets/mago.png" id="1_vwxko"]
+[ext_resource type="AudioStream" uid="uid://bvvvp4xdgb531" path="res://assets/Sounds/yooooooooooo.mp3" id="2_ug4wg"]
 
 [sub_resource type="GDScript" id="GDScript_vwxko"]
 script/source = "extends CharacterBody2D
 
+
+	
+func Lapada() -> void:
+	if Input.is_action_just_pressed(\"dash\"):
+		Yoooo.play()
 var velocidade_do_jogador: float = 400.0;
 var direcao_do_movimento: Vector2 = Vector2(0, 0);
-
+@onready var Yoooo: AudioStreamPlayer = $AudioStreamPlayer
 func _ready() -> void:
 	pass 
 
 
 func _process(delta: float) -> void:
 	movimentar_jogador();
+	Lapada();
 	
 	
 
@@ -49,3 +56,6 @@ texture = ExtResource("1_vwxko")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=676944360]
 shape = SubResource("CircleShape2D_uahlj")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1168581324]
+stream = ExtResource("2_ug4wg")
